@@ -1,0 +1,20 @@
+package com.fakesib.SpaceOfPsychologyAndSpeech.config;
+
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class MvcConfig implements WebMvcConfigurer {
+
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("").setViewName("main");
+        registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/feedback").setViewName("feedback");
+        registry.addViewController("/telegram").setViewName("telegram");
+        registry.addViewController("/speech").setViewName("sections/speech");
+        registry.addViewController("/psychology").setViewName("sections/psychology");
+        registry.addViewController("/neuropsychology").setViewName("sections/neuropsychology");
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выберите время</title>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
+    <link rel="stylesheet" th:href="@{/css/menu.css}" />
+    <link rel="stylesheet" th:href="@{/css/interface.css}" />
+    <link rel="stylesheet" th:href="@{/css/account.css}">
+
+</head>
+
+<body>
+    <input type="checkbox" id="overlay-input" />
+    <label for="overlay-input" id="overlay-button"><span></span></label>
+    <div id="overlay">
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="/"><b>Главная</b></a></li>
+            <li><a href="/psychology"><b>Психология</b></a></li>
+            <li><a href="/neuropsychology"><b>Нейропсихология</b></a></li>
+            <li><a href="/speech"><b>Логопедия</b></a></li>
+            <li><a href="/feedback"><b>Отзывы</b></a></li>
+            <li><a href="/account">
+                    <img src="/images/user.png" alt="login" class="scale" style="width: 130px; height: 130px;">
+                </a>
+                <a href="/registration">
+                    <img src="/images/login.png" alt="registration" class="scale" style="width: 130px; height: 130px;">
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="container">
+        <header>
+            <a href="/"><img src="/images/talking.png" alt="talking" class="scale"></a>
+            <b>пространствомаргариты.рф</b>
+        </header>
+        <div class="menu">
+            <p>Выберите нужное время</p>
+            <ul>
+                <li th:each="time : ${readyList}">
+                    <form th:action="@{/account/records/date/time}" th:object="${time}" method="post" class="for">
+                        <button type="button" th:text="${time}" th:value="${time}" class="date"></button>
+                        <button type="submit" th:value="${time}" name="timeButton" id="timeButton" th:name="timeButton"
+                            class="select">Выбрать</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <a href="/telegram"><img src="/images/telegram.png" alt="telegram" class="scale"
+                style="position: fixed; right: 0; bottom: 0;" /></a>
+    </div>
+</body>
+
+</html>
