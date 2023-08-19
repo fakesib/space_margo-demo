@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import "../css/reset.css";
+
+
+* {
+    margin: 0;
+    font-family: 'Quicksand', serif;
+	font-family: cursive;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe6e6;
+}
+
+
+.container {
+    position: relative;
+    max-width: 370px;
+    background-color: snow;
+    width: 100%;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.container header {
+    font-size: 22px;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+}
+
+.container .form {
+    margin-top: 30px;
+}
+
+.form .field {
+    margin-bottom: 20px;
+}
+
+.form .input-field {
+    position: relative;
+    height: 55px;
+    width: 100%;
+}
+
+.input-field input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 15px
+}
+
+.invalid input{
+    border-color: #f00;
+}
+
+.field .error {
+    margin-top: 6px;
+    color: #d93025;
+    font-size: 13px;
+    display: none;
+}
+
+.invalid .error{
+    display: flex;
+}
+
+.error .error-icon {
+    margin-right: 6px;
+    font-size: 15px;
+}    
+
+.create-password .error{
+    align-items: flex-start;
+}
+
+.create-password.error-icon {
+    margin-top: 4px;
+    margin-right: 6px;
+    font-size: 15px;
+}
+
+.button{
+    margin: 25px 0 6px;
+}
+
+.button .submit {
+    background-color: #8fa4e3;
+}
+
+.button input {
+    font-size: 16px;
+    color: white;
+    background-color: #8fa4e3;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input:hover{
+    background-color: #7490e6;
+    border-color: rgb(41, 41, 233);
+}
+

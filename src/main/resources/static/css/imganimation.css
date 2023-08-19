@@ -1,0 +1,9 @@
+@import "./reset.css";
+
+.scale {
+    transition: 0,7s;
+}
+
+.scale:hover {
+    transform: scale(1.1);
+}

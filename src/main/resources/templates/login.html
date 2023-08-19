@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в аккаунт</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/form.css">
+    <link rel="stylesheet" href="../static/css/menu.css">
+    <link rel="stylesheet" href="../static/css/imganimation.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}" >
+    <link rel="stylesheet" th:href="@{/css/form.css}" />
+    <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
+    <link rel="stylesheet" th:href="@{/css/menu.css}" />
+    <link rel='stylesheet' th:href="@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}" />
+</head>
+<body>
+    <input type="checkbox" id="overlay-input" />
+    <label for="overlay-input" id="overlay-button"><span></span></label>
+    <div id="overlay">
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="/"><b>Главная</b></a></li>
+            <li><a href="/psychology"><b>Психология</b></a></li>
+            <li><a href="/neuropsychology"><b>Нейропсихология</b></a></li>
+            <li><a href="/speech"><b>Логопедия</b></a></li>
+            <li><a href="/feedback"><b>Отзывы</b></a></li>
+            <li><a href="/account">
+                    <img src="/images/user.png" alt="login" class="scale" style="width: 130px; height: 130px;">
+                </a>
+                <a href="/registration">
+                    <img src="/images/login.png" alt="registration" class="scale" style="width: 130px; height: 130px;">
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="container">
+        <header><b>Вход в аккаунт</b></header>
+
+        <form method="POST" th:action="@{/login}" id="loginForm">
+            <div class="field email-field">
+                <div class="input-field">
+                    <input type="email" placeholder="Введите почту" class="email" id="username" name="username"/>
+                </div>
+                <span class="error email-error">
+                    <i class='bx bx-error-circle error-icon'></i>
+                    <p class="error-text">Пожалуйста введите правильную почту</p>
+                </span>
+            </div>
+            <div class="field create-password">
+                <div class="input-field">
+                    <label for="password"></label>
+                    <input type="password" placeholder="Введите пароль" class="password" id="password" name="password"/>
+                </div>
+                <span class="error password-error">
+                    <i class='bx bx-error-circle error-icon'></i>
+                    <p class="error-text">Пожалуйста введите правильный пароль</p>
+                </span>
+            </div>
+            <div class="input-field button">
+                <input type="submit" value="Войти" class="submit">
+            </div>
+        </form>
+    </div>
+    <div>
+        <a href="/telegram"><img src="/images/telegram.png" alt="tg" class="scale" style="position: fixed; right: 0; bottom: 0;" /></a>
+    </div>
+</body>
+</html>
