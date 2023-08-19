@@ -9,5 +9,4 @@ public class SpaceOfPsychologyAndSpeechApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpaceOfPsychologyAndSpeechApplication.class, args);
 	}
-
 }
