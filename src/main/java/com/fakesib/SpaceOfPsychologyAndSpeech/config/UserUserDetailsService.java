@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+
+
 @Component
 public class UserUserDetailsService implements UserDetailsService {
     @Autowired
@@ -19,6 +21,7 @@ public class UserUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByUsername(username);
+
         return user.map(UserUserDetails::new)
                 .orElseThrow(()->new UsernameNotFoundException("user not found" + username));
     }

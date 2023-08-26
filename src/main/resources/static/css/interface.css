@@ -40,10 +40,48 @@ body {
     color:black;
 }
 
+
+.container .menu ul li form input {
+    color: red;
+}
+
 .container .menu ul li a:hover {
     color: #8fa4e3;
     font-size: 30px;
 }
+
+.message {
+    margin-left: 5rem;
+    width: 66.66667%;
+    background-color: #FDC68A;
+    border-left: .75rem solid #F26C4F;
+    padding: .75rem 1.5rem;
+    font-size: 1 rem;
+
+    & a:hover {
+        border-color: rgba(0, 0, 0, .5);
+        color: rgba(0, 0, 0, .5);
+    }
+
+    &.note {
+        background-color: #7BCDC8;
+        border-color: #00A99D;
+    }
+}
+
+.message h2 {
+    font-size: 2rem;
+
+}
+
+code {
+    background-color: rgba(0,0,0,.125);
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0 .125em;
+    padding: 0 .25em;
+  }
 
 
 @media screen and (max-width: 830px){
@@ -58,4 +96,13 @@ body {
    .container .menu ul li a {
     font-size: 20px;
    }
+
+   .message {
+        font-size: 0.99rem;
+    }
+
+    .message h2 {
+        font-size: 1.5rem;
+    }
+
 }

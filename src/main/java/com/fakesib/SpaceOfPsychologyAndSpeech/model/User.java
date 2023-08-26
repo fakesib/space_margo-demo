@@ -16,5 +16,10 @@ public class User {
     private int id;
     private String username;
     private String password;
+    private String name;
+    private String surname;
     private String roles;
+    private int telegram_id;
+    private boolean telegram_auth;
+    private String records;
 }

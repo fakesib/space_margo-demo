@@ -3,7 +3,7 @@
 body {
     background-color: #ffe6e6;
     font-family: 'Quicksand', serif;
-	font-family: cursive;
+    font-family: cursive;
 }
 
 .container header {
@@ -21,9 +21,9 @@ body {
 
 .container .menu ul {
     display: block;
-	height: 50vh;
-	padding-left: 1rem;
-	list-style-type: none;
+    height: 50vh;
+    padding-left: 1rem;
+    list-style-type: none;
 }
 
 .container .menu p {
@@ -37,9 +37,9 @@ body {
     margin-bottom: 10em;
 }
 
-    
+
 .container .menu ul li a {
-    color:black;
+    color: black;
 }
 
 .container .menu ul li a:hover {
@@ -65,7 +65,7 @@ body {
     line-height: 1.5;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     color: #000;
     background-color: lightgrey;
 }
@@ -88,25 +88,26 @@ body {
     line-height: 1.5;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     color: #000;
     background-color: #8fa4e3;
 }
 
-@media screen and (max-width: 830px){
-    .container header  {
+@media screen and (max-width: 830px) {
+    .container header {
         font-size: 25px;
     }
-    
-   .container header img {
-        width: 100px
-        mar
-   }
 
-   .container .menu ul li a {
-    font-size: 0px;
-   }
-   .container .menu ul li a:hover {
-    font-size: 0px;
-}
+    .container header img {
+        width: 100px;
+    }
+
+    .container .menu ul li a {
+        font-size: 0px;
+    }
+
+    .container .menu ul li a:hover {
+        font-size: 0px;
+    }
+
 }
