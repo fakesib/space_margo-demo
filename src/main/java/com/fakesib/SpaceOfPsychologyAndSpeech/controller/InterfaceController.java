@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class InterfaceController {
     @Autowired private UserRepository userRepository;
 
-
     @GetMapping("")
     public String interfacePage() {
         return "account/interface";
