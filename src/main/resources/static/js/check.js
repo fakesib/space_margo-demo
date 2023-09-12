@@ -1,5 +1,3 @@
-
-
 const form = document.querySelector("form"),
   emailField = form.querySelector(".email-field"),
   emailInput = emailField.querySelector(".email"),
@@ -49,37 +47,41 @@ function confirmPassword() {
 }
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkEmail();
-  createPassword();
-  confirmPassword();
+  const xhr = new XMLHttpRequest();
+  const passwordPattern = /^(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/;
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  const method = form.method;
+  const action = form.getAttribute('th:action');
+  const formData = new FormData(form);
 
+  
+  e.preventDefault();
+  // e.preventDefault();
+  // checkEmail;
+  // createPassword;
+  // confirmPassword;
+  // emailInput.addEventListener("keyup", checkEmail);
+  // passInput.addEventListener("keyup", createPassword);
+  // cPassInput.addEventListener("keyup", confirmPassword);
+  xhr.open(method, action, true);
+
+  xhr.addEventListener("load", function (event) {
+    sendData();
+  });
+
+  xhr.addEventListener("error", function (event) {
+    alert('Что-то пошло не так!');
+  });
+  
+  if (passInput.value.match(passwordPattern) && passInput.value === cPassInput.value && emailInput.value.match(emailPattern)) {
+    xhr.send(formData);
+  } else {
+  checkEmail;
+  createPassword;
+  confirmPassword;
   emailInput.addEventListener("keyup", checkEmail);
   passInput.addEventListener("keyup", createPassword);
   cPassInput.addEventListener("keyup", confirmPassword);
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    const method = form.method;
-    const action = form.getAttribute('th:action');
-    const formData = new FormData(form);
-    const xhr = new XMLHttpRequest();
-
-    xhr.open(method, action, true);
-
-    xhr.addEventListener("load", function (event) {
-      sendData();
-    });
-
-    xhr.addEventListener("error", function (event) {
-      alert('Что-то пошло не так!');
-    });
-
-    const passwordPattern = /^(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/;
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-    if (passInput.value.match(passwordPattern) && passInput.value === cPassInput.value && emailInput.value.match(emailPattern)) {
-      xhr.send(formData);
-    } else { }
-  });
+  }
 });
 

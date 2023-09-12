@@ -22,4 +22,5 @@ public class User {
     private int telegram_id;
     private boolean telegram_auth;
     private String records;
+    private String activationCode;
 }

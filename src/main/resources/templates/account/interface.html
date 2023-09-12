@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -49,12 +49,8 @@
         <div class="menu">
             <p>Выберите нужный раздел</p>
             <ul>
-                <li> <a href="/account/profile">Профиль <img style="margin-top: -0.5rem; margin-left: -0.5rem;" src="/images/profile.png" alt="profile"></a>
-                </li>
-                <li> <a href="/account/records">Записи <img src="/images/records.png" alt="records"></a>
-                </li>
-                <li> <a href="/account/settings">Настройки <img src="/images/settings.png"
-                            alt="settings"></a></li>
+                <li> <a href="/account/profile">Профиль <img style="margin-top: -0.5rem; margin-left: -0.5rem;" src="/images/profile.png" alt="profile"></a></li>
+                <li> <a href="/account/records">Записи <img src="/images/records.png" alt="records"></a></li>
                 <li> <a href="/account/help">Помощь <img src="/images/support.png" alt="support"></a></li>
                 <li>
                     <form th:action="@{/logout}" method="post">

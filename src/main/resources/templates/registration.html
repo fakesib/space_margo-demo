@@ -16,6 +16,8 @@
     <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
     <link rel="stylesheet" th:href="@{/css/menu.css}" />
     <link rel='stylesheet' th:href="@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/interface.css}" />
+    <link rel="stylesheet" th:href="@{/css/account.css}">
 </head>
 
 <body>
@@ -41,6 +43,7 @@
         </ul>
     </div>
     <div class="container">
+        <h1 th:text="${exist}"></h1>
         <header><b>Регистрация</b></header>
 
         <form method="POST" th:action="@{/registration}" id="myForm">
@@ -75,8 +78,10 @@
             <div class="input-field button">
                 <input type="submit" value="Зарегистрироваться" class="submit">
             </div>
+
         </form>
     </div>
+
     <div>
         <a href="/telegram"><img src="/images/telegram.png" alt="tg" class="scale"
                 style="position: fixed; right: 0; bottom: 0;" /></a>
