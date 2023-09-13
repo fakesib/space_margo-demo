@@ -42,7 +42,6 @@ public class InterfaceController {
                               @RequestParam("name") String name,
                               @RequestParam("surname") String surname){
         UserUserDetails userDetails = (UserUserDetails) authentication.getPrincipal();
-        userService.editUser(userDetails, email, password, name, surname);
         return "redirect:/account";
     }
 

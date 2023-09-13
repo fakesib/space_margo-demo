@@ -7,6 +7,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import javax.swing.text.html.HTML;
 import java.util.UUID;
@@ -30,14 +31,11 @@ public class UserService {
 
         String message = String.format("Привет! \n" + "Добро пожаловать на сайт ПространствоМаргариты.рф, пожалуйста для дальнейшей " +
                         "регистрации подтвердите e-mail по ссылке: \n" +
-                        "<a href=\"http://localhost:8080/activation/%s\">вот</a>",
+                        "\"http://localhost:8080/activation/%s\"",
                 user.getActivationCode());
         mailSender.send(user.getUsername(), "Подтвердите электронную почту", message);
         userRepository.save(user);
         return true;
-    }
-    public void editUser(UserUserDetails userDetails, String email, String password, String name, String surname) {
-
     }
 
     public boolean activateUser(String code) {

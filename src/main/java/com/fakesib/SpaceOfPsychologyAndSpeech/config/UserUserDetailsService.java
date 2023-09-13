@@ -28,6 +28,7 @@ public class UserUserDetailsService implements UserDetailsService {
         // Проверка пустого значения поля authenticationCode
         if (!StringUtils.isEmpty(userObj.getActivationCode())) {
             throw new UsernameNotFoundException("user not activeted");
+
         }
         return user.map(UserUserDetails::new)
                 .orElseThrow(()->new UsernameNotFoundException("user not found" + username));
