@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="../static/css/imganimation.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" th:href="@{/css/main.css}" >
+    <link rel="stylesheet" th:href="@{/css/main.css}">
     <link rel="stylesheet" th:href="@{/css/form.css}" />
     <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
     <link rel="stylesheet" th:href="@{/css/menu.css}" />
+    <link rel="stylesheet" th:href="@{/css/form_header.css}">
     <link rel='stylesheet' th:href="@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}" />
+
 </head>
 <body>
     <input type="checkbox" id="overlay-input" />
@@ -37,10 +39,24 @@
             
         </ul>
     </div>
+
+    <div class="form-header">
+        <header>
+            <a href="/"><img src="/images/talking.png" alt="talking" class="scale"></a>
+            <b>пространствомаргариты.рф</b>
+        </header>
+    </div>
+
     <div class="container">
         <header><b>Вход в аккаунт</b></header>
 
         <form method="POST" th:action="@{/login}" id="loginForm">
+            <div th:if="${param.error}" class="param-error">
+                Вы не подтвердили почту!
+            </div>
+            <div th:if="${param.logout}" class="param-error">
+                Вы вышли из аккаунта!
+            </div>
             <div class="field email-field">
                 <div class="input-field">
                     <input type="email" placeholder="Введите почту" class="email" id="username" name="username"/>

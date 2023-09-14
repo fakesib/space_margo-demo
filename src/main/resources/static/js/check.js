@@ -1,3 +1,4 @@
+var submitButton = document.getElementById('submitButton');
 const form = document.querySelector("form"),
   emailField = form.querySelector(".email-field"),
   emailInput = emailField.querySelector(".email"),
@@ -5,10 +6,20 @@ const form = document.querySelector("form"),
   passInput = passField.querySelector(".password"),
   cPassField = form.querySelector(".confirm-password"),
   cPassInput = cPassField.querySelector(".confirm");
+  
+
+
+emailInput.addEventListener("input", checkEmail);
+passInput.addEventListener("input", createPassword);
+cPassInput.addEventListener("input", confirmPassword);
 
 function sendData() {
   const XHR = new XMLHttpRequest();
   const FD = new FormData(form);
+
+  emailInput.addEventListener("keyup", checkEmail);
+  passInput.addEventListener("keyup", createPassword);
+  cPassInput.addEventListener("keyup", confirmPassword);
 
   XHR.addEventListener("load", function (event) {
     document.location.href = "/login";
@@ -46,6 +57,7 @@ function confirmPassword() {
   cPassField.classList.remove("invalid");
 }
 
+
 form.addEventListener("submit", (e) => {
   const xhr = new XMLHttpRequest();
   const passwordPattern = /^(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/;
@@ -54,15 +66,11 @@ form.addEventListener("submit", (e) => {
   const action = form.getAttribute('th:action');
   const formData = new FormData(form);
 
-  
+
+
   e.preventDefault();
-  // e.preventDefault();
-  // checkEmail;
-  // createPassword;
-  // confirmPassword;
-  // emailInput.addEventListener("keyup", checkEmail);
-  // passInput.addEventListener("keyup", createPassword);
-  // cPassInput.addEventListener("keyup", confirmPassword);
+
+
   xhr.open(method, action, true);
 
   xhr.addEventListener("load", function (event) {
@@ -72,16 +80,10 @@ form.addEventListener("submit", (e) => {
   xhr.addEventListener("error", function (event) {
     alert('Что-то пошло не так!');
   });
-  
+
   if (passInput.value.match(passwordPattern) && passInput.value === cPassInput.value && emailInput.value.match(emailPattern)) {
     xhr.send(formData);
-  } else {
-  checkEmail;
-  createPassword;
-  confirmPassword;
-  emailInput.addEventListener("keyup", checkEmail);
-  passInput.addEventListener("keyup", createPassword);
-  cPassInput.addEventListener("keyup", confirmPassword);
+      submitButton.classList.add("clicked");
+      submitButton.disabled = true;   
   }
 });
-
