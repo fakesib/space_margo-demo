@@ -25,6 +25,12 @@ article h2 {
 	font-size: 5rem;
 }
 
+article h3 {
+	max-width: 90%;
+	margin: auto;
+	font-size: 3rem;
+}
+
 article p {
 	max-width: 90%;
 	margin: 0 auto;
@@ -50,7 +56,7 @@ article blockquote p {
 	padding: 0;
 	margin: 0;
 	float: left;
-	font-size: large;
+	font-size: 1.5rem;
 }
 
 article blockquote span.attribution {
@@ -69,6 +75,11 @@ article blockquote span.attribution {
 
 img {
 	width: 70px;
+}
+
+article nav details p {
+	font-style:oblique;
+	text-decoration: underline;
 }
 
 
@@ -96,5 +107,8 @@ img {
 		left: 100px;
 
 		float: right;
+	}
+	article blockquote p{
+		font-size: large;
 	}
 }

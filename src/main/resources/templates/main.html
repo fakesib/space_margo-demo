@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/imganimation.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/menu.css">
+    
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
+    <link rel="stylesheet" th:href="@{/css/menu.css}" />
+
+</head>
+
+<body>
+    <input type="checkbox" id="overlay-input" />
+    <label for="overlay-input" id="overlay-button"><span></span></label>
+    <div id="overlay">
+        <ul>
+            <li></li>
+            <li><a href="/"><b>Главная</b></a></li>
+            <li><a href="/psychology"><b>Психология</b></a></li>
+            <li><a href="/neuropsychology"><b>Нейропсихология</b></a></li>
+            <li><a href="/speech"><b>Логопедия</b></a></li>
+            <li><a href="/feedback"><b>Отзывы</b></a></li>
+            <li><a href="/account">
+                    <img src="/images/user.png" alt="login" class="scale" style="width: 130px; height: 130px;">
+                </a>
+                <a href="/registration">
+                    <img src="/images/login.png" alt="registration" class="scale" style="width: 130px; height: 130px;">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <article>
+        <h1>Привет!</h1>
+        <p>«Я живу в центре Манхэттена, на 81ой стрит,
+            на 11 этаже здания американ гарден. Меня зовут Патрик Бейтман, мне 27 лет. Я слежу за собой, соблюдаю диету
+            занимаюсь физическими упражнениями. По утрам если лицо немного отекло я накладываю маску со льдом пока качаю
+            пресс, я знаю тысячи таких упражнений, </p>
+        <blockquote>
+            <figure>
+                <p>
+                    <img src="/images/avatar.jpg" alt="">
+                </p>
+            </figure>
+        </blockquote>
+        <p>
+            после того как я снимаю маску, я использую ласьен для очистки пор,
+            принимая душ я пользуюсь очищающем гелем, затем специальным моющем средством для тела с экстрактом меда и
+            мендаля, затем я делаю себе косметическую маску из крема, оставляю ее на 10 минут пока занимаюсь другими
+            делами. Я всегда пользуюсь ласьеном после бритья в котором нет спирта, потому что спирт сушит кожу и старит
+            лицо. Потом увлажняющий крем, бальзам исправляющий морщины вокруг глаз, и наконец заключительный увлажняющий
+            ласьен. Всеобщее представление о Патрике Бейтоне всего лиш абстракция. На самом деле это не я, это только
+            призрак, иллюзия, и когда я могу спрятать свой колючий взгляд, вы можете пожать мне руку и почувствовать
+            прикосновение плоти, вы даже можете подумать что мы ведем похожий образ жизни. Но это не так, я из другого
+            мира».
+        </p>
+        
+        <div class="card-group">
+            <div class="card">
+              <img class="card-img-top" src="/images/psychology-therapy.png" alt="Psychology">
+              <div class="card-body">
+                <h5 class="card-title">Детский психолог</h5>
+                <p class="card-text">Запуск речи. Логопедический массаж. Развитием общей, мелкой моторики. Проработка речи. Более подробная информация</p>
+                <p class="card-text"> <a href="#" ><small class="text-muted">Тут ➡️</small></a></p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="/images/speech-therapy.png" alt="Logopedia">
+              <div class="card-body">
+                <h5 class="card-title">Детский логопед</h5>
+                <p class="card-text">Проблемы с поведением ребенка. Трудности с усвоением учебного материала. Тревожность, страхи. Заикания. Более подробная информация</p>
+                <p class="card-text"> <a href="#" ><small class="text-muted">Тут ➡️</small></a></p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="/images/neuropsychology-therapy.png" alt="Neuropsychology">
+              <div class="card-body">
+                <h5 class="card-title">Детский нейропсихолог</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"> <a href="#" ><small class="text-muted">Тут ➡️</small></a></p>
+              </div>
+            </div>
+          </div>
+          
+    </article>
+    
+    
+</body>
+
+</html>

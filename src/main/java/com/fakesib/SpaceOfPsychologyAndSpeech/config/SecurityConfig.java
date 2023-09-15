@@ -22,7 +22,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "main", "speech", "psychology", "neuropsychology", "feedback", "telegram", "registration", "", "activation/*").permitAll()
+                        .requestMatchers("/", "main", "speech", "psychology", "neuropsychology", "feedback", "telegram", "registration", "", "activation/*", "curse").permitAll()
                         .requestMatchers("/" , "/css/**", "images/**", "js/**").permitAll() // подключение css, images, js
                         .anyRequest().authenticated()
                 )
