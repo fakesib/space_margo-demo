@@ -7,19 +7,14 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "users")
+@Table(name = "my_records")
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class MyRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String username;
-    private String password;
-    private String name;
-    private String surname;
-    private String roles;
-    private long telegram_id;
-    private boolean telegram_auth;
-    private String activationCode;
+    private String date;
+    private String time;
 }

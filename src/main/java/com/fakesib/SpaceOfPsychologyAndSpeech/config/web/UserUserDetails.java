@@ -1,6 +1,7 @@
-package com.fakesib.SpaceOfPsychologyAndSpeech.config;
+package com.fakesib.SpaceOfPsychologyAndSpeech.config.web;
 
 import com.fakesib.SpaceOfPsychologyAndSpeech.model.User;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,6 +11,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Data
 public class UserUserDetails implements UserDetails {
 
     private String username;
@@ -28,16 +30,6 @@ public class UserUserDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
     }
 
     @Override

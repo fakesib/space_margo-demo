@@ -1,4 +1,4 @@
-package com.fakesib.SpaceOfPsychologyAndSpeech.config;
+package com.fakesib.SpaceOfPsychologyAndSpeech.config.web;
 
 
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +16,7 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/curse").setViewName("curse");
         registry.addViewController("/speech").setViewName("sections/speech");
         registry.addViewController("/psychology").setViewName("sections/psychology");
-        registry.addViewController("/neuropsychology").setViewName("sections/neuropsychology");
+        registry.addViewController("/neuropsychology").setViewName("sections/neuro");
+        registry.addViewController("/helptg").setViewName("helptelegram");
     }
 }

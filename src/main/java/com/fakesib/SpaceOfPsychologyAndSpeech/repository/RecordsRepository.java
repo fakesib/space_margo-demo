@@ -1,8 +1,8 @@
 package com.fakesib.SpaceOfPsychologyAndSpeech.repository;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import com.fakesib.SpaceOfPsychologyAndSpeech.model.Record;
 
 import java.util.List;
@@ -10,7 +10,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-@Transactional(readOnly = true)
 public interface RecordsRepository extends JpaRepository<Record, Integer>{
     List<Record> findAll();
 
@@ -28,5 +27,33 @@ public interface RecordsRepository extends JpaRepository<Record, Integer>{
 
     @Query(value = "SELECT CASE WHEN time_4 IS NULL THEN 'time_4' END AS NULL FROM records WHERE date = ?1", nativeQuery = true)
     String time_4(String date);
+
+    @Modifying
+    @Query(value = "UPDATE records SET time_1 = ?1 where date = ?2", nativeQuery = true)
+    void insertRecordTime1(String message, String date);
+
+    @Modifying
+    @Query(value = "UPDATE records SET time_2 = ?1 where date = ?2", nativeQuery = true)
+    void insertRecordTime2(String message, String date);
+
+    @Modifying
+    @Query(value = "UPDATE records SET time_3 = ?1 where date = ?2", nativeQuery = true)
+    void insertRecordTime3(String message, String date);
+
+    @Modifying
+    @Query(value = "UPDATE records SET time_4 = ?1 where date = ?2", nativeQuery = true)
+    void insertRecordTime4(String message, String date);
+
+    @Query(value = "SELECT date FROM records WHERE id = ?1 AND time_1 = ?2", nativeQuery = true)
+    String findDateByIdAndTime_1(int id, String user);
+
+    @Query(value = "SELECT date FROM records WHERE id = ?1 AND time_2 = ?2", nativeQuery = true)
+    String findDateByIdAndTime_2(int id, String user);
+
+    @Query(value = "SELECT date FROM records WHERE id = ?1 AND time_3 = ?2", nativeQuery = true)
+    String findDateByIdAndTime_3(int id, String user);
+
+    @Query(value = "SELECT date FROM records WHERE id = ?1 AND time_4 = ?2", nativeQuery = true)
+    String findDateByIdAndTime_4(int id, String user);
 
 }

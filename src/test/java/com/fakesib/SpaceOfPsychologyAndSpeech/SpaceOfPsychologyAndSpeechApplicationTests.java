@@ -8,6 +8,7 @@ class SpaceOfPsychologyAndSpeechApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

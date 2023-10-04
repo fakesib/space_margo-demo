@@ -1,4 +1,4 @@
-package com.fakesib.SpaceOfPsychologyAndSpeech.config;
+package com.fakesib.SpaceOfPsychologyAndSpeech.config.web;
 
 
 import com.fakesib.SpaceOfPsychologyAndSpeech.model.User;

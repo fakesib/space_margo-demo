@@ -43,18 +43,24 @@
     </div>
     <div class="container">
         <header>
-            <a href="/"><img src="/images/talking.png" alt="talking" class="scale"></a>
+            <a href="/account"><img src="/images/talking.png" alt="talking" class="scale"></a>
             <b>пространствомаргариты.рф</b>
         </header>
         <div class="menu">
             <p>Выберите нужный раздел</p>
             <ul>
-                <li> <a href="/account/profile">Профиль <img style="margin-top: -0.5rem; margin-left: -0.5rem;" src="/images/profile.png" alt="profile"></a></li>
-                <li> <a href="/account/records">Записи <img src="/images/records.png" alt="records"></a></li>
+                <li> <a href="/account/profile">Профиль <img src="/images/profile.png" alt="profile"></a>
+                </li>
+                <li> <a href="/account/records">Записи <img src="/images/records.png" alt="records"></a>
+                </li>
                 <li> <a href="/account/help">Помощь <img src="/images/support.png" alt="support"></a></li>
                 <li>
                     <form th:action="@{/logout}" method="post">
-                        <input type="submit" value="Выйти" /> <img src="/images/logout.png" alt="logout">
+                        <div class="form">
+                            <input type="submit" value="Выйти"/>
+                            <img src="/images/logout.png" alt="logout" style="width: 3rem; margin-top: -0.5rem;
+                            margin-left: -0.5rem;">
+                        </div>
                     </form>
                 </li>
             </ul>

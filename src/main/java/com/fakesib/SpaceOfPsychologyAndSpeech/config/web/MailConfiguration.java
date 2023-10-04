@@ -1,4 +1,4 @@
-package com.fakesib.SpaceOfPsychologyAndSpeech.config;
+package com.fakesib.SpaceOfPsychologyAndSpeech.config.web;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
@@ -15,4 +14,13 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     User findByActivationCode(String code);
 
     User findActivationCodeByUsername(String username);
+
+    @Query(value = "UPDATE users SET records = ?1 WHERE username = ?2", nativeQuery = true)
+    String updateRecordsByUsername(String message, String username);
+
+    @Query(value = "SELECT records FROM users WHERE username = ?1", nativeQuery = true)
+    String findRecordsByUsername(String username);
+
+
+    long findTelegramIdByUsername(String email);
 }

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нейропсихология</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/css/imganimation.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/css/menu.css">
+
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
+    <link rel="stylesheet" th:href="@{/css/menu.css}" />
+
+</head>
+
+<body>
+    <input type="checkbox" id="overlay-input" />
+    <label for="overlay-input" id="overlay-button"><span></span></label>
+    <div id="overlay">
+        <ul>
+            <li></li>
+            <li><a href="/"><b>Главная</b></a></li>
+            <li><a href="/psychology"><b>Психология</b></a></li>
+            <li><a href="/neuropsychology"><b>Нейропсихология</b></a></li>
+            <li><a href="/speech"><b>Логопедия</b></a></li>
+            <li><a href="/feedback"><b>Отзывы</b></a></li>
+            <li><a href="/account">
+                    <img src="/images/user.png" alt="login" class="scale" style="width: 130px; height: 130px;">
+                </a>
+                <a href="/registration">
+                    <img src="/images/login.png" alt="registration" class="scale" style="width: 130px; height: 130px;">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <article>
+        <h1><b>Детский нейропсихолог</b></h1>
+        <p>
+        <nav style="margin-left: 2rem;">
+            <li><a href="#who" style="color: black;">Кто это такой?</a></li>
+            <li><a href="#navig" style="color: black;">Направления</a></li>
+            <li><a href="#act" style="color: black;">Актуальность</a></li>
+            <li><a href="/psychology#exes" style="color: black;">Занятия</a></li>
+            <li><a href="#rec" style="color: black;">Как записаться</a></li>
+        </nav>
+        </p>
+        <h3 id="who">Кто это такой</h3>
+        <p>
+            Детский нейропсихолог - это специалист, который применяет знания из нейрологии, психологии и развития
+            ребенка для помощи в диагностике и лечении психологических и нейрологических проблем у детей.
+        </p>
+        <blockquote>
+            <figure>
+                <p>
+                    <img src="/images/neuro1.jpg" alt="neuro-page">
+                </p>
+            </figure>
+        </blockquote>
+        <p>
+            Они работают с
+            детьми, у которых есть задержки в развитии, нарушения внимания, памяти или другие проблемы, связанные с
+            мозгом и поведением.
+            Детские нейропсихологи используют различные методы и инструменты для оценки когнитивных
+            и психологических функций ребенка и разрабатывают планы индивидуального лечения и поддержки.
+        </p>
+        <h3 id="navig">Направления</h3>
+        <p>
+            В нейропсихологии выделяется несколько направлений:
+        </p>
+        <nav style="margin-left: 4rem;">
+            <details>
+                <summary>Клиническое</summary>
+            </details>
+            <details>
+                <summary>Реабилитационное</summary>
+            </details>
+            <details>
+                <summary>Психофизиологическо</summary>
+            </details>
+            <details>
+                <summary>Экспериментальное</summary>
+            </details>
+        </nav>
+        <p>
+            Про все эти направления вы можете подробнее прочитать в интернете, но лично от себя добавлю что
+            все эти направления важны и комбинируются для создания полной картины о том, как работает
+            наш мозг и как он взаимодействует с нашим сознанием и поведением.
+        </p>
+        <h3 id="act">Актуальность</h3>
+        <p>
+            Нейропсихология - это молодое направление в науке, является важной и актуальной областью научного
+            исследования, которая изучает взаимосвязь между мозгом и психическими процессами.
+            В целом, нейропсихология актуальна, так как ее исследования и применения могут иметь важные практические
+            последствия, связанные с пониманием и лечением психических расстройств, разработкой более эффективных
+            методов обучения и тренировок, а также с помощью нейротехнологий для улучшения качества жизни.
+        </p>
+        <h3 id="rec">Как записаться</h3>
+        <p>
+            Чтобы записаться на консультацию вы должны пройти небольшую регистрацию на <a href="/registration">сайте</a>
+            после чего выбрать
+            нужную дату и время проведения занятия, оплативаете и ждёте сообщения на почту!
+            Буду вас ждать!
+        </p>
+    </article>
+
+    <div>
+        <a href="/telegram"><img src="/images/telegram.png" alt="tg" class="scale"
+                style="position: fixed; right: 0; bottom: 0;" /></a>
+    </div>
+
+</body>
+
+</html>
