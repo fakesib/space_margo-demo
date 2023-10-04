@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,900|Montserrat|Roboto');
+
+.settings {
+    background: white;
+    width: 540px;
+    height: 420px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 3%;
+    box-shadow: 2px 5px 20px rgba(gray, .5);
+}
+
+.left-box {
+    float: left;
+    top: -5%;
+    left: 5%;
+    position: absolute;
+    width: 15%;
+    height: 110%;
+    background: #8ea3e2;
+    box-shadow: 3px 3px 10px rgba(gray, .5);
+}
+
+nav a {
+    list-style: none;
+    padding: 1.7rem;
+    color: black;
+    font-size: 2rem;
+    display: block;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        color: #fbf1cf;
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    &:first-child {
+        margin-top: 80px;
+    }
+}
+
+.rightbox {
+    float: right;
+    width: 40%;
+    height: 100%;
+}
+
+.profile {
+    transition: opacity .5s ease-in;
+    position: absolute;
+    width: 70%;
+    margin-left: 10rem;
+}
+
+.profile h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: black;
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+.profile h2 {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    width: 80%;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-left: 2px;
+    margin-top: 1rem;
+}
+
+.profile p {
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to right, aqua, rgba(green, .5));
+    border-top: 0; 
+    border-left: 0;
+    border-right: 0;
+    width: 80%;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    color: black;
+}
+
+.noshow {
+    opacity: 0;
+}
+
+@media screen and (max-width: 850px) {
+    .settings {
+        width: 400px;
+        height: 280px;
+        margin-top: 10%;
+    }
+
+    nav a {
+        padding: 1.1rem;
+        font-size: 1.7rem;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:first-child {
+            margin-top: 40px;
+        }
+    }
+    .profile {
+        margin-left: 7rem;
+    }
+
+    .profile h1 {
+        margin-bottom: 20px;
+        margin-top: 10px;
+        font-size: 1.5rem;
+    }
+    .profile h2 {
+        font-size: 12px;
+    }
+    .profile p {
+        font-size: 1rem;
+    } 
+}

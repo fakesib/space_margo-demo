@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&display=swap');
+
+
+body {
+    font-family: 'Quicksand', serif;
+	font-family: cursive;
+    
+}
+
+.form-header header {
+    align-items: center;
+    display: flex;
+    margin-top: 0rem;
+    margin-left: 1rem;
+    font-size: 40px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.form-header header img {
+    width: 150px;
+}
+
+@media screen and (max-width: 830px){
+    .form-header header  {
+        font-size: 25px;
+    }
+    
+   .form-header  header img {
+        width: 100px
+   }
+}

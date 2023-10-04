@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои записи</title>
+
+    <link rel="stylesheet" href="../../../static/css/recordsTable.css">
+    <link rel="stylesheet" href="../../../static/css/main.css">
+    <link rel="stylesheet" href="../../../static/css/menu.css">
+    <link rel="stylesheet" href="../../../static/css/imganimation.css">
+    <link rel="stylesheet" href="../../../static/css/interface.css">
+
+    <link rel="stylesheet" th:href="@{/css/recordsTable.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/imganimation.css}">
+    <link rel="stylesheet" th:href="@{/css/interface.css}">
+
+</head>
+
+<body>
+    <input type="checkbox" id="overlay-input" />
+    <label for="overlay-input" id="overlay-button"><span></span></label>
+    <div id="overlay">
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="/"><b>Главная</b></a></li>
+            <li><a href="/psychology"><b>Психология</b></a></li>
+            <li><a href="/neuropsychology"><b>Нейропсихология</b></a></li>
+            <li><a href="/speech"><b>Логопедия</b></a></li>
+            <li><a href="/feedback"><b>Отзывы</b></a></li>
+            <li><a href="/account">
+                    <img src="/images/user.png" alt="login" class="scale" style="width: 130px; height: 130px;">
+                </a>
+                <a href="/registration">
+                    <img src="/images/login.png" alt="registration" class="scale" style="width: 130px; height: 130px;">
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="container">
+        <header>
+            <a href="/account"><img src="/images/talking.png" alt="talking" class="scale"></a>
+            <b>пространствомаргариты.рф</b>
+        </header>
+    </div>
+    <div class="table-title">
+        <h3><b>мои записи</b></h3>
+    </div>
+    <table class="table-fill">
+        <thead>
+            <tr>
+                <th class="text-left">Дата 🗓</th>
+                <th class="text-left">Время 🕘</th>
+                <th class="text-left">Оплата 💳</th>
+            </tr>
+        </thead>
+<!--        <tbody class="table-hover">-->
+<!--            <tr th:each="date, time : ${dateList}, ${timeList}">-->
+<!--                <td class="text-left" th:text="${date}"></td>-->
+<!--                <td class="text-left" ></td>-->
+<!--                <td class="text-left">Оплачено</td>-->
+<!--            </tr>-->
+<!--        </tbody>-->
+        <tbody class="table-hover">
+        <tr th:each="record : ${recordList}">
+            <td class="text-left" th:text="${record.date}"></td>
+            <td class="text-left" th:text="${record.time}"></td>
+            <td class="text-left">Оплачено</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <a href="/telegram"><img src="/images/telegram.png" alt="telegram" class="scale"
+                style="position: fixed; right: 0; bottom: 0;" /></a>
+    </div>
+</body>
+
+</html>

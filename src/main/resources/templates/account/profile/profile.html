@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
+  <link rel="stylesheet" href="../../../static/css/settings.css">
   <link rel="stylesheet" href="../../../static/css/main.css">
   <link rel="stylesheet" href="../../../static/css/menu.css">
   <link rel="stylesheet" href="../../../static/css/imganimation.css">
   <link rel="stylesheet" href="../../../static/css/interface.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <link rel="stylesheet" th:href="@{/css/main.css}">
   <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
@@ -41,29 +43,37 @@
   </div>
   <div class="container">
     <header>
-      <a href="/"><img src="/images/talking.png" alt="talking" class="scale"></a>
+      <a href="/account"><img src="../../../static/images/talking.png" alt="talking" class="scale"></a>
       <b>пространствомаргариты.рф</b>
     </header>
-    <div class="menu">
-      <p>Ваш профиль</p>
-      <ul>
-        <div class="window">
-          <p>E-mail</p>
-          <li th:text="${email}"></li>
+    <div class="settings">
+      <div class="left-box">
+        <nav>
+          <a id="profile" class="active"><i class='bx bx-user'></i></a>
+          <a id="child"><i class='bx bxs-baby-carriage' ></i></a>
+          <a id="settings"><i class='bx bxs-cog'></i></a>
+        </nav>
+      </div>
+      <div class="right-box">
+        <div class="profile">
+          <h1>Личное</h1>
+          <h2>Имя</h2>
+          <p>Иван</p>
+          <h2>Фамилия</h2>
+          <p>Иванов</p>
         </div>
-        <div class="window">
-          <p>Пароль</p>
-          <li th:text="${password}"></li>
-        </div>
-      </ul>
+        <!-- <div class="settings">
+          <h1>Настройки</h1>
+          <h2>E-mail</h2>
+          <p>fakesibbb@gmail.com</p>
+          <h2>Пароль</h2>
+          <p>Asd123</p>
+        </div> -->
+      </div>
     </div>
-    <div class="message">
-      <h2><b>Многие функции недоступны!</b></h2>
-      <p>Многие функции сейчас недоступны, извините за неудобства</p> 
-  </div>
   </div>
   <div>
-    <a href="/telegram"><img src="/images/telegram.png" alt="telegram" class="scale"
+    <a href="/telegram"><img src="../../../static/images/telegram.png" alt="telegram" class="scale"
         style="position: fixed; right: 0; bottom: 0;" /></a>
   </div>
 </body>
