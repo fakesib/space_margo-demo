@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../../../static/css/interface.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+  <link rel="stylesheet" th:href="@{/css/settings.css}">
   <link rel="stylesheet" th:href="@{/css/main.css}">
   <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
   <link rel="stylesheet" th:href="@{/css/menu.css}" />
@@ -43,7 +44,7 @@
   </div>
   <div class="container">
     <header>
-      <a href="/account"><img src="../../../static/images/talking.png" alt="talking" class="scale"></a>
+      <a href="/account"><img src="/images/talking.png" alt="talking" class="scale"></a>
       <b>пространствомаргариты.рф</b>
     </header>
     <div class="settings">
@@ -51,31 +52,47 @@
         <nav>
           <a id="profile" class="active"><i class='bx bx-user'></i></a>
           <a id="child"><i class='bx bxs-baby-carriage' ></i></a>
-          <a id="settings"><i class='bx bxs-cog'></i></a>
+          <a id="config"><i class='bx bxs-cog'></i></a>
         </nav>
       </div>
       <div class="right-box">
-        <div class="profile">
+        <div class="profile" id="profile-div">
           <h1>Личное</h1>
           <h2>Имя</h2>
-          <p>Иван</p>
+          <p th:text="${name}"></p>
           <h2>Фамилия</h2>
-          <p>Иванов</p>
+          <p th:text="${surname}" style="margin-bottom: 1rem;"></p>
+          <a href="/account/profile/edit/personal" type="button" class="edit">Изменить</a>
         </div>
-        <!-- <div class="settings">
+        <div class="config" id="config-div">
           <h1>Настройки</h1>
           <h2>E-mail</h2>
-          <p>fakesibbb@gmail.com</p>
+          <p th:text="${email}"></p>
           <h2>Пароль</h2>
-          <p>Asd123</p>
-        </div> -->
+          <p th:text="${password}" style="margin-bottom: 1rem;"></p>
+          <a href="/account/profile/edit/config" type="button" class="edit">Изменить</a>
+        </div>
+        <div class="child" id="child-div">
+          <h1>Ребенок</h1>
+          <h2>Имя</h2>
+          <p th:text="${childName}"></p>
+          <h2>Фамилия</h2>
+          <p th:text="${childSurname}"></p>
+          <h2>Возраст</h2>
+          <p th:text="${childAge}" style="margin-bottom: 1rem;"></p>
+          <a href="/account/profile/edit/child" type="button" class="edit">Изменить</a>
+        </div>
       </div>
     </div>
   </div>
   <div>
-    <a href="/telegram"><img src="../../../static/images/telegram.png" alt="telegram" class="scale"
+    <a href="/telegram"><img src="/images/telegram.png" alt="telegram" class="scale"
         style="position: fixed; right: 0; bottom: 0;" /></a>
   </div>
+
+
+  <script src="../../../static/js/settings.js"></script>
+  <script type="text/javascript" th:src="@{/js/settings.js}"></script>
 </body>
 
 </html>

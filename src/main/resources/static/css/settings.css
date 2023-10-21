@@ -46,14 +46,16 @@ nav a {
     height: 100%;
 }
 
-.profile {
+.profile,
+.config,
+.child {
     transition: opacity .5s ease-in;
     position: absolute;
     width: 70%;
     margin-left: 10rem;
 }
 
-.profile h1 {
+h1 {
     font-family: 'IBM Plex Sans', sans-serif;
     color: black;
     font-size: 2rem;
@@ -61,7 +63,7 @@ nav a {
     margin-bottom: 35px;
 }
 
-.profile h2 {
+h2 {
     color: black;
     font-family: 'Roboto', sans-serif;
     width: 80%;
@@ -72,11 +74,10 @@ nav a {
     margin-top: 1rem;
 }
 
-.profile p {
+p {
     border-width: 1px;
     border-style: solid;
-    border-image: linear-gradient(to right, aqua, rgba(green, .5));
-    border-top: 0; 
+    border-top: 0;
     border-left: 0;
     border-right: 0;
     width: 80%;
@@ -85,8 +86,26 @@ nav a {
     color: black;
 }
 
+.edit {
+    padding: 2%;
+    color: white;
+    background-color: #8ea3e2;
+    border: 1.5px solid #8ea3e2;
+    border-radius: 10px;
+    margin-left: 11rem;
+}
+
+.edit:hover {
+    border: 2px solid blue !important;
+}
+
+
+.active {
+    color: #fbf1cf;
+}
+
 .noshow {
-    opacity: 0;
+    margin-top: 100rem;
 }
 
 @media screen and (max-width: 850px) {
@@ -108,19 +127,35 @@ nav a {
             margin-top: 40px;
         }
     }
-    .profile {
+
+    .profile,
+    .config,
+    .child {
         margin-left: 7rem;
     }
 
-    .profile h1 {
-        margin-bottom: 20px;
-        margin-top: 10px;
-        font-size: 1.5rem;
+    h1 {
+        margin-bottom: 10px;
     }
-    .profile h2 {
+
+    .child h1 {
+        font-size: 15px;
+    }
+
+    .profile,
+    .config,
+    .child h2 {
         font-size: 12px;
     }
-    .profile p {
+
+    .profile,
+    .config,
+    .child p {
         font-size: 1rem;
-    } 
+    }
+
+    .edit {
+        margin-left: 9rem;
+    }
+    
 }

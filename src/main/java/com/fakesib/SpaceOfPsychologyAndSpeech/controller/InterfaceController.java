@@ -7,44 +7,28 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/account")
 public class InterfaceController {
+
     @Autowired private UserService userService;
 
-    @GetMapping("")
-    public String interfacePage() {
-        return "account/interface";
-    }
-
     @GetMapping("/profile")
-    public String profilePage(Model model, Authentication authentication) {
+    public String getProfile(Model model, Authentication authentication) {
         UserUserDetails userDetails = (UserUserDetails) authentication.getPrincipal();
-        model.addAttribute("email", userDetails.getUsername());
+        String username = userDetails.getUsername();
+        model.addAttribute("email", username);
         model.addAttribute("password", userDetails.getPassword());
+        model.addAttribute("childName", "null");
+        model.addAttribute("childSurname", "null");
+        model.addAttribute("childAge", "null");
+        model.addAttribute("name", userService.getName(username));
+        model.addAttribute("surname", userService.getSurname(username));
         return "account/profile/profile.html";
     }
 
-    @PostMapping("/profile")
-    public String profileEdit(){
-        return "redirect:/account";
-    }
+//    @GetMapping("/profile/edit/")
 
-    @GetMapping("/records")
-    public String recordsPage() {
-        return "account/records/records";
-    }
-    
-    @GetMapping("/settings")
-    public String settingsPage() {
-        return "account/settings";
-    }
-
-    @GetMapping("/help")
-    public String helpPage() {
-        return "account/help";
-    }
 }

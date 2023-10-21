@@ -5,6 +5,8 @@ import com.fakesib.SpaceOfPsychologyAndSpeech.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -42,5 +44,27 @@ public class UserService {
         user.setActivationCode(null);
         userRepository.save(user);
         return true;
+    }
+
+    public String getName(String username) {
+        String name = userRepository.findNameByUsername(username);
+        return name;
+    }
+
+    public String getSurname(String username) {
+        String surname = userRepository.findSurnameByUsername(username);
+        return surname;
+    }
+
+    public void updateName(String name, String username) {
+        if (name != null || !name.equals(userRepository.findNameByUsername(username))){
+            userRepository.updateNameByUsername(name, username);
+        }
+    }
+
+    public void updateSurname(String surname, String username) {
+        if (surname != null || !surname.equals(userRepository.findSurnameByUsername(username))){
+            userRepository.updateSurnameByUsername(surname, username);
+        }
     }
 }
