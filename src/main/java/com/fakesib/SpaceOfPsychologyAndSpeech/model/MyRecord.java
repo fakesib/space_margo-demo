@@ -17,4 +17,5 @@ public class MyRecord {
     private String username;
     private String date;
     private String time;
+    private String format;
 }

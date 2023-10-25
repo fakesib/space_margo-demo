@@ -62,7 +62,7 @@
           <p th:text="${name}"></p>
           <h2>Фамилия</h2>
           <p th:text="${surname}" style="margin-bottom: 1rem;"></p>
-          <a href="/account/profile/edit/personal" type="button" class="edit">Изменить</a>
+          <a href="/account/profile/edit" type="button" class="edit" th:name="changeButton" th:value="profile">Изменить</a>
         </div>
         <div class="config" id="config-div">
           <h1>Настройки</h1>
@@ -70,17 +70,15 @@
           <p th:text="${email}"></p>
           <h2>Пароль</h2>
           <p th:text="${password}" style="margin-bottom: 1rem;"></p>
-          <a href="/account/profile/edit/config" type="button" class="edit">Изменить</a>
+          <a href="/account/profile/edit" type="button" class="edit" th:name="changeButton" th:value="config">Изменить</a>
         </div>
         <div class="child" id="child-div">
           <h1>Ребенок</h1>
           <h2>Имя</h2>
           <p th:text="${childName}"></p>
-          <h2>Фамилия</h2>
-          <p th:text="${childSurname}"></p>
           <h2>Возраст</h2>
           <p th:text="${childAge}" style="margin-bottom: 1rem;"></p>
-          <a href="/account/profile/edit/child" type="button" class="edit">Изменить</a>
+<!--          <a href="/account/profile/edit/child" type="button" class="edit" th:name="changeButton" th:value="child">Изменить</a>-->
         </div>
       </div>
     </div>

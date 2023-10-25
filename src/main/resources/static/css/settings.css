@@ -105,7 +105,7 @@ p {
 }
 
 .noshow {
-    margin-top: 100rem;
+    display: none;
 }
 
 @media screen and (max-width: 850px) {

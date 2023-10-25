@@ -48,22 +48,34 @@ public class RecordsService {
         return readyList;
     }
 
-    public void updateRecordAndNotification(String time, String email, String date) {
+    public void updateRecordAndNotification(String time, String email, String date, String format) {
         TelegramBot bot = new TelegramBot();
 
         // Notification Admin Telegram
         long adminId = 1033942837;
-        String messageToSendToAdmin = "Новая запись:" + "\n" + date + " время: " + time + "\n" + "Электронная почта пользователя: " + email;
+        String messageToSendToAdmin = "Новая запись:" + "\n" + date + " время: " + time
+                + "\n" + "Электронная почта пользователя: " + email
+                + "\n" + "Формат консультации: " + format;
         bot.sendMessage(adminId, messageToSendToAdmin);
 
         // Send mail message
         String s = "Если возникнут какие-то " + "<a href=\"http://localhost:8080/accont/help\">вопросы</a>";
-        String emailMessage = "Ваша запись была успешно добавлена <br> </br><br> </br>" + "\n" + "Дата консультации: " + date + " время: " + time
-                + "<br> </br><br> </br>ПространствоМаргариты.рф<br> </br>" + s;
-        mailSender.send(email, "Вы успешно записались!", emailMessage);
 
+        if(format.equals("online")) {
+            String emailMessage = "Ваша запись была успешно добавлена <br> </br><br> </br>" + "\n" + "Дата консультации: " + date + " время: " + time
+                    + "<br>За час до занятия вам на почту (и телеграмм если подключен) придёт ссылка для подключения в zoom"
+                    + "<br> </br><br> </br>ПространствоМаргариты.рф<br> </br>" + s;
+            mailSender.send(email, "Вы успешно записались!", emailMessage);
+        } else {
+            String emailMessage = "Ваша запись была успешно добавлена <br> </br><br> </br>" + "\n" + "Дата консультации: " + date + " время: " + time
+                    + "<br> </br>За час до занятия вам на почту (и телеграмм если записан) придёт адрес для проведения консультации. <br>" +
+                    "Сделано это для личной безопасности, пока вам известна станция метро: Физтех"
+                    + "<br> </br><br> </br>ПространствоМаргариты.рф<br> </br>" + s;
+            mailSender.send(email, "Вы успешно записались!", emailMessage);
+        }
 
-        myRecordsRepository.addNewRecord(email, date, time);
+        // adding myrecords
+        myRecordsRepository.addNewRecord(email, date, time, format);
         // Updating record
         if (time.equals("11:30")) {
             recordsRepository.insertRecordTime1(email, date);
@@ -77,32 +89,5 @@ public class RecordsService {
         else if (time.equals("20:00")) {
             recordsRepository.insertRecordTime4(email, date);
         }
-    }
-
-    public List<String> getDatesList(String username){
-        List<String> readyList = new ArrayList<>();
-        for (int i = 1; i < 30; i++) {
-            if (recordsRepository.findDateByIdAndTime_1(i, username) != null){
-                readyList.add(recordsRepository.findDateByIdAndTime_1(i, username));
-            }
-            if (recordsRepository.findDateByIdAndTime_2(i, username) != null){
-                readyList.add(recordsRepository.findDateByIdAndTime_2(i, username));
-            }
-            if (recordsRepository.findDateByIdAndTime_3(i, username) != null){
-                readyList.add(recordsRepository.findDateByIdAndTime_3(i, username));
-            }
-            if (recordsRepository.findDateByIdAndTime_3(i, username) != null){
-                readyList.add(recordsRepository.findDateByIdAndTime_3(i, username));
-            }
-        }
-        return readyList;
-    }
-
-    public List<String> getTimeList(String username) {
-        List<String> allTimes = new ArrayList<>();
-        allTimes.add("11");
-        allTimes.add("21");
-
-        return allTimes;
     }
 }

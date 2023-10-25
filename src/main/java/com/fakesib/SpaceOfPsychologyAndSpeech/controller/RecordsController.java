@@ -41,6 +41,15 @@ public class RecordsController {
     @Autowired private MyRecordsRepository myRecordsRepository;
 
     private String date;
+    private String format;
+
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
 
     public String getDate() {
         return date;
@@ -48,6 +57,22 @@ public class RecordsController {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    @GetMapping("/format")
+    public String getFormatPage(){
+        return "account/records/format";
+    }
+
+    @PostMapping("format")
+    public String setFormatPage(@RequestParam("button") String button){
+
+        if (button.equals("offline")){
+            setFormat("offline");
+        }else {
+            setFormat("online");
+        }
+        return "redirect:/account/records/date";
     }
 
     @GetMapping("/date")
@@ -74,7 +99,7 @@ public class RecordsController {
 
         UserUserDetails userDetails = (UserUserDetails) authentication.getPrincipal();
         String email = userDetails.getUsername();
-        recordsService.updateRecordAndNotification(time, email, getDate());
+        recordsService.updateRecordAndNotification(time, email, getDate(), getFormat());
         return "redirect:/account/records/date/time/submit";
     }
 

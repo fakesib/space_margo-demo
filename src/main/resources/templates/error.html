@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ошибка</title>
+    <link rel="stylesheet" href="../static/css/settings.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/menu.css">
+    <link rel="stylesheet" href="../static/css/imganimation.css">
+    <link rel="stylesheet" href="../static/css/interface.css">
+    <link rel="stylesheet" href="../static/css/error.css">
+
+    <link rel="stylesheet" th:href="@{/css/settings.css}">
+  <link rel="stylesheet" th:href="@{/css/main.css}">
+  <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
+  <link rel="stylesheet" th:href="@{/css/menu.css}" />
+  <link rel="stylesheet" th:href="@{/css/interface.css}" />
+  <link rel="stylesheet" th:href="@{/css/error.css}" />
+  
+
+</head>
+
+<body>
+    <input type="checkbox" id="overlay-input" />
+    <label for="overlay-input" id="overlay-button"><span></span></label>
+    <div id="overlay">
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="/"><b>Главная</b></a></li>
+            <li><a href="/psychology"><b>Психология</b></a></li>
+            <li><a href="/neuropsychology"><b>Нейропсихология</b></a></li>
+            <li><a href="/speech"><b>Логопедия</b></a></li>
+            <li><a href="/feedback"><b>Отзывы</b></a></li>
+            <li><a href="/account">
+                    <img src="/images/user.png" alt="login" class="scale" style="width: 130px; height: 130px;">
+                </a>
+                <a href="/registration">
+                    <img src="/images/login.png" alt="registration" class="scale" style="width: 130px; height: 130px;">
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="container">
+        <header>
+            <a href="/account"><img src="/images/talking.png" alt="talking" class="scale"></a>
+            <b>пространствомаргариты.рф</b>
+        </header>
+        <div class="error">
+            <h1>Ошибка</h1>
+            <h2>К сожалению эта страничка ещё не сделана</h2>
+        </div>
+    </div>
+
+</body>
+
+</html>

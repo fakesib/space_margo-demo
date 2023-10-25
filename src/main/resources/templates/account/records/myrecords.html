@@ -54,23 +54,18 @@
     <table class="table-fill">
         <thead>
             <tr>
+                <th class="text-left">ID</th>
                 <th class="text-left">Дата 🗓</th>
                 <th class="text-left">Время 🕘</th>
-                <th class="text-left">Оплата 💳</th>
+                <th class="text-left">Формат </th>
             </tr>
         </thead>
-<!--        <tbody class="table-hover">-->
-<!--            <tr th:each="date, time : ${dateList}, ${timeList}">-->
-<!--                <td class="text-left" th:text="${date}"></td>-->
-<!--                <td class="text-left" ></td>-->
-<!--                <td class="text-left">Оплачено</td>-->
-<!--            </tr>-->
-<!--        </tbody>-->
         <tbody class="table-hover">
         <tr th:each="record : ${recordList}">
+            <td class="text-left" th:text="${record.id}"></td>
             <td class="text-left" th:text="${record.date}"></td>
             <td class="text-left" th:text="${record.time}"></td>
-            <td class="text-left">Оплачено</td>
+            <td class="text-left" th:text="${record.format}"></td>
         </tr>
         </tbody>
     </table>

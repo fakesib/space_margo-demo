@@ -1,0 +1,17 @@
+.container .error h1 {
+    font-size: 15rem;
+}
+
+.container .error h2 {
+    font-size: 5rem;
+}
+
+@media screen and (max-width: 900px) {
+    .container .error h1 {
+    font-size: 8rem;
+    }
+
+    .container .error h2 {
+        font-size: 2rem;
+    }
+}

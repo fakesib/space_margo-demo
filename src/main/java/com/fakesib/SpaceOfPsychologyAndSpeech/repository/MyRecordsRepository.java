@@ -12,8 +12,8 @@ import java.util.List;
 public interface MyRecordsRepository extends JpaRepository<MyRecord, Integer> {
 
     @Modifying
-    @Query(value = "INSERT INTO my_records(username, date, time) values(?1, ?2, ?3)", nativeQuery = true)
-    void addNewRecord(String username, String date, String time);
+    @Query(value = "INSERT INTO my_records(username, date, time, format) values(?1, ?2, ?3, ?4)", nativeQuery = true)
+    void addNewRecord(String username, String date, String time, String format);
 
     @Query(value = "SELECT date FROM my_records WHERE username=?1", nativeQuery = true)
     List<String> findDateByUsername(String username);

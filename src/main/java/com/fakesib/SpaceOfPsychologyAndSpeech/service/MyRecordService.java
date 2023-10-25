@@ -14,9 +14,9 @@ import java.util.List;
 public class MyRecordService {
     @Autowired
     private MyRecordsRepository myRecordsRepository;
-
-    public void addNewRecord(String username, String date, String time){
-        myRecordsRepository.addNewRecord(username, date, time);
-    }
+//
+//    public void addNewRecord(String username, String date, String time){
+//        myRecordsRepository.addNewRecord(username, date, time);
+//    }
 
 }
