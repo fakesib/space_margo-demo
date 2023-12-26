@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&family=Preahvihear&family=Roboto&display=swap');
 
 body {
     background-color: #ffe6e6;
-    font-family: 'Quicksand', serif;
-    font-family: cursive;
+    /* font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Preahvihear', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: cursive; */
 }
 
 .container header {
@@ -94,20 +97,29 @@ body {
 }
 
 @media screen and (max-width: 830px) {
-    .container header {
-        font-size: 25px;
+    .container header b{
+        font-size: 2rem;
     }
 
     .container header img {
-        width: 100px;
+        width: 7rem;
     }
 
     .container .menu ul li a {
-        font-size: 0px;
+        font-size: 5px;
     }
 
     .container .menu ul li a:hover {
         font-size: 0px;
     }
 
+}
+
+@media screen and (max-width: 700px) {
+    .container header b{
+        font-size: 1.1rem;
+    }
+    .container header img {
+        width: 5.5rem;
+    }
 }

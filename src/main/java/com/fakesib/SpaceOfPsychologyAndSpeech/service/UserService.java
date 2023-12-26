@@ -26,10 +26,10 @@ public class UserService {
         } else {}
         user.setActivationCode(UUID.randomUUID().toString());
 
-        String s = "Если возникнут какие-то " + "<a href=\"http://localhost:8080/accont/help\">вопросы</a>";
+        String s = "Если возникнут какие-то " + "<a href=\"http://fakesib.site:8080/accont/help\">вопросы</a>";
         String message = String.format("Привет! <br> </br><br> </br>" + "Добро пожаловать на сайт ПространствоМаргариты.рф, пожалуйста для дальнейшей " +
                         "регистрации подтвердите e-mail по ссылке: \n" +
-                        "<a href=\"http://localhost:8080/activation/%s\">тык</a>" + "<br> </br><br> </br>ПространствоМаргариты.рф<br> </br>" + s,
+                        "<a href=\"http://fakesib.site/activation/%s\">тык</a>" + "<br> </br><br> </br>ПространствоМаргариты.рф<br> </br>" + s,
                 user.getActivationCode());
         mailSender.send(user.getUsername(), "Подтвердите электронную почту", message);
         userRepository.save(user);

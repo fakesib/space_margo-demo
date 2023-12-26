@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800;900&display=swap');
 @import "./reset.css";
 
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&family=Preahvihear&family=Roboto&display=swap');
+
+
+
 body {
 	margin: 0;
 	background-color: #ffe6e6;
-	font-family: 'Quicksand', serif;
-	font-family: cursive;
+	/* font-family: cursive;
+	font-family: 'Roboto', sans-serif; */
+	font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Preahvihear', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 article {
@@ -28,7 +35,7 @@ article h2 {
 article h3 {
 	max-width: 90%;
 	margin: auto;
-	font-size: 3rem;
+	font-size: 2.5rem;
 }
 
 article p {
@@ -37,6 +44,10 @@ article p {
 	padding: .5rem 0;
 	position: relative;
 	font-weight: 300;
+}
+
+article .side nav {
+	margin-left: 4rem;
 }
 
 article blockquote {
@@ -78,7 +89,7 @@ img {
 }
 
 article nav details p {
-	font-style:oblique;
+	font-style: oblique;
 	text-decoration: underline;
 }
 
@@ -88,7 +99,7 @@ article blockquote figure p img {
 }
 
 @media screen and (max-width: 1100px) {
-	article blockquote figure p  img{
+	article blockquote figure p img {
 		margin-left: 0rem;
 	}
 }
@@ -119,11 +130,17 @@ article blockquote figure p img {
 
 		float: right;
 	}
-	article blockquote p{
+
+	article blockquote p {
 		font-size: large;
 	}
+
 	article blockquote figure p img {
 		margin-left: 2rem;
 		width: 20rem;
+	}
+
+	article .side nav {
+		margin-left: 2rem;
 	}
 }

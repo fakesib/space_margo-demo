@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Формат</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выберите формат</title>
 
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <link rel="stylesheet" th:href="@{/css/imganimation.css}" />
@@ -10,59 +11,48 @@
     <link rel="stylesheet" th:href="@{/css/interface.css}" />
     <link rel="stylesheet" th:href="@{/css/account.css}">
 
-    <link rel="stylesheet" href="../../../static/css/main.css">
-    <link rel="stylesheet" href="../../../static/css/menu.css">
-    <link rel="stylesheet" href="../../../static/css/imganimation.css">
-    <link rel="stylesheet" href="../../../static/css/interface.css">
-    <link rel="stylesheet" href="../../../static/css/account.css">
-
 </head>
 <body>
-    <input type="checkbox" id="overlay-input" />
-    <label for="overlay-input" id="overlay-button"><span></span></label>
-    <div id="overlay">
+<input type="checkbox" id="overlay-input" />
+<label for="overlay-input" id="overlay-button"><span></span></label>
+<div id="overlay">
+    <ul>
+        <li><a href="/"><b>Главная</b></a></li>
+        <li><a href="/psychology"><b>Психология</b></a></li>
+        <li><a href="/neuropsychology"><b>Нейропсихология</b></a></li>
+        <li><a href="/speech"><b>Логопедия</b></a></li>
+        <li><a href="/feedback"><b>Отзывы</b></a></li>
+        <li><a href="/account">
+            <img src="/images/user.png" alt="login" class="scale" style="width: 130px; height: 130px;">
+        </a>
+            <a href="/registration">
+                <img src="/images/login.png" alt="registration" class="scale" style="width: 130px; height: 130px;">
+            </a>
+        </li>
+
+    </ul>
+</div>
+<div class="container">
+    <header>
+        <a href="/account"><img src="/images/talking.png" alt="talking" class="scale"></a>
+        <b>пространствомаргариты.рф</b>
+    </header>
+    <div class="menu">
+        <p>Выберите нужный формат</p>
         <ul>
-            <li><a href="#"></a></li>
-            <li><a href="/"><b>Главная</b></a></li>
-            <li><a href="/psychology"><b>Психология</b></a></li>
-            <li><a href="/neuropsychology"><b>Нейропсихология</b></a></li>
-            <li><a href="/speech"><b>Логопедия</b></a></li>
-            <li><a href="/feedback"><b>Отзывы</b></a></li>
-            <li><a href="/account">
-                    <img src="/images/user.png" alt="login" class="scale" style="width: 130px; height: 130px;">
-                </a>
-                <a href="/registration">
-                    <img src="/images/login.png" alt="registration" class="scale" style="width: 130px; height: 130px;">
-                </a>
+            <li th:each="format : ${formats}">
+                <form th:action="@{/account/records/format}" th:object="${format}" method="post" class="for">
+                    <button type="button" th:text="${format}" th:value="${format}" class="date"></button>
+                    <button type="submit" th:value="${format}" name="formatButton" id="formatButton" th:name="formatButton" class="select">Выбрать</button>
+                </form>
             </li>
         </ul>
     </div>
-    <div class="container">
-        <header>
-            <a href="/account"><img src="/images/talking.png" alt="talking" class="scale"></a>
-            <b>пространствомаргариты.рф</b>
-        </header>
-        <div class="menu">
-            <p>Выберите формат консультации</p>
-            <ul>
-                <li>
-                    <form th:action="@{/account/records/format}" method="post" class="for">
-                        <button type="button" class="date">Онлайн</button>
-                        <button type="submit" th:value="online" name="onlineButton" th:name="button" class="select">Выбрать</button>
-                    </form>
-                </li>
-                <li>
-                    <form th:action="@{/account/records/format}" method="post" class="for">
-                        <button type="button" class="date">Оффлайн</button>
-                        <button type="submit" th:value="offline" name="offlineButton" th:name="button" class="select">Выбрать</button>
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div>
-        <a href="/telegram"><img src="/images/telegram.png" alt="telegram" class="scale"
-                style="position: fixed; right: 0; bottom: 0;" /></a>
-    </div>
+</div>
+<div>
+    <a href="/telegram"><img src="/images/telegram.png" alt="telegram" class="scale"
+                             style="position: fixed; right: 0; bottom: 0;" /></a>
+</div>
+
 </body>
 </html>

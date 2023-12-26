@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&display=swap');
 
 body {
-    font-family: 'Quicksand', serif;
-	font-family: cursive;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Preahvihear', sans-serif;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .container header {
@@ -20,13 +22,13 @@ body {
 
 .container .menu ul {
     display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	text-align: center;
-	height: 50vh;
-	padding-left: 0;
-	list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 50vh;
+    padding-left: 0;
+    list-style-type: none;
 }
 
 .container .menu p {
@@ -42,7 +44,7 @@ body {
 }
 
 .container .menu ul li a {
-    color:black;
+    color: black;
     border: 1px solid black;
     border-radius: 10px;
     padding: 12px;
@@ -55,7 +57,7 @@ body {
     margin-left: -0.5rem;
 }
 
-.container .menu ul .window{
+.container .menu ul .window {
     padding: 10px;
     justify-content: left;
 }
@@ -86,7 +88,7 @@ body {
 .container .menu ul li a:hover {
     color: #8fa4e3;
     font-size: 25px;
-    border-color:  #8fa4e3;
+    border-color: #8fa4e3;
 }
 
 .container .message {
@@ -114,8 +116,8 @@ body {
 }
 
 code {
-    background-color: rgba(0,0,0,.125);
-    border: 1px solid rgba(0,0,0,.125);
+    background-color: rgba(0, 0, 0, .125);
+    border: 1px solid rgba(0, 0, 0, .125);
     border-radius: 4px;
     display: inline-block;
     margin: 0 .125em;
@@ -123,9 +125,9 @@ code {
 }
 
 .container .menu ul li form .form {
-  border: 5px solid red;
-  border-radius: 10px;
-  padding: 10px;
+    border: 5px solid red;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .container table thead {
@@ -134,8 +136,8 @@ code {
 
 
 
-@media screen and (max-width: 830px){
-    .container header  {
+@media screen and (max-width: 830px) {
+    .container header {
         font-size: 25px;
     }
 
@@ -147,20 +149,20 @@ code {
     .container .menu ul {
         height: 45vh;
     }
-    
-   .container header img {
+
+    .container header img {
         width: 100px
-   }
+    }
 
-   .container .menu ul li a {
-    font-size: 20px;
-   }
+    .container .menu ul li a {
+        font-size: 20px;
+    }
 
-   .container .menu ul li a:hover {
-    font-size: 22px;
-   }
+    .container .menu ul li a:hover {
+        font-size: 22px;
+    }
 
-   .message {
+    .message {
         font-size: 0.99rem;
     }
 

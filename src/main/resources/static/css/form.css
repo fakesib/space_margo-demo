@@ -118,8 +118,8 @@ body {
 }
 
 .submit.clicked:hover {
-    background-color: white;
-    border-color: white;
+    background-color: grey;
+    border-color: lightgray transparent;
 }
 
 @keyframes nomAnim{

@@ -12,6 +12,7 @@ div.table-title {
   max-width: 600px;
   padding: 5px;
   width: 100%;
+  margin-top: 2rem;
 }
 
 .table-title h3 {
@@ -32,6 +33,7 @@ div.table-title {
   border-collapse: collapse;
   height: 320px;
   margin: auto;
+  margin-top: 1rem;
   max-width: 600px;
   padding: 5px;
   width: 100%;

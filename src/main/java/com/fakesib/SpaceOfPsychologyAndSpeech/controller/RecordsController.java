@@ -60,17 +60,21 @@ public class RecordsController {
     }
 
     @GetMapping("/format")
-    public String getFormatPage(){
+    public String getFormatPage(Model model){
+        List<String> formatList = new ArrayList<>();
+        formatList.add("Онлайн💻");
+        formatList.add("Оффлайн🚶");   
+        model.addAttribute("formats", formatList);
         return "account/records/format";
     }
 
-    @PostMapping("format")
-    public String setFormatPage(@RequestParam("button") String button){
+    @PostMapping("/format")
+    public String setFormatPage(@RequestParam("formatButton") String button){
 
-        if (button.equals("offline")){
-            setFormat("offline");
+        if (button.equals("Оффлайн🚶")){
+            setFormat("Оффлайн🚶");
         }else {
-            setFormat("online");
+            setFormat("Онлайн💻");
         }
         return "redirect:/account/records/date";
     }
